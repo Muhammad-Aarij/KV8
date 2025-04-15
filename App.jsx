@@ -6,7 +6,6 @@ export default function App() {
   return (
     <View>
       <Text>Welcome to App.js</Text>
-      <SplashScreen1 />
     </View>
   );
 }
