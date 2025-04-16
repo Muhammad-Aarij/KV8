@@ -52,13 +52,16 @@ const styles = StyleSheet.create({
         resizeMode: "contain",
     },
     text: {
+        fontFamily:"Urbanist-Bold",
+        // fontFamily:"Urbanist-Medium",
         fontSize: 20,
-        fontWeight: "bold",
+        // fontWeight: "bold",
         color: theme.colors.text,
         textAlign: "center",
         marginTop: 20,
     },
     subText: {
+        fontFamily:"Urbanist-Medium",
         fontSize: 15,
         color: theme.colors.text,
         textAlign: "center",

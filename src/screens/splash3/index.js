@@ -53,12 +53,14 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 20,
-        fontWeight: "bold",
+
+        fontFamily: "Urbanist-Bold",
         color: theme.colors.text,
         textAlign: "center",
         marginTop: 20,
     },
     subText: {
+        fontFamily: "Urbanist-Medium",
         fontSize: 15,
         color: theme.colors.text,
         textAlign: "center",
@@ -80,20 +82,20 @@ const styles = StyleSheet.create({
         height: 120,
         resizeMode: "contain",
     },
-    dotContainer:{
+    dotContainer: {
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
         marginVertical: 30,
     },
-    cirlce:{
+    cirlce: {
         width: 10,
         height: 10,
         borderRadius: 5,
         backgroundColor: theme.colors.primary,
         marginHorizontal: 5,
     },
-    rectangle:{
+    rectangle: {
         width: 30,
         height: 10,
         borderRadius: 5,
