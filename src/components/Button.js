@@ -6,7 +6,7 @@ export default function Button({ title, onPress }) {
     return (
         <TouchableOpacity
             style={{
-                padding: 10, backgroundColor: theme.colors.primary, borderRadius: 25, paddingVertical: 15
+                padding: 10, backgroundColor: theme.colors.primary, borderRadius: 25, paddingVertical: 18
                 , width: "100%", textAlign: "center", alignItems: "center", justifyContent: "center",
             }}
             onPress={onPress}>

@@ -7,5 +7,6 @@ import App from './App';
 import {name as appName} from './app.json';
 import splashScreen1 from './src/screens/splash4/index.js';
 import RoleSelectionScreen from './src/screens/roleSelectionScreen/RoleSelectionScreen.js';
+import Signin from './src/screens/Forget Password/index.js'
 
-AppRegistry.registerComponent(appName, () => RoleSelectionScreen);
+AppRegistry.registerComponent(appName, () => Signin);
