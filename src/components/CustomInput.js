@@ -12,6 +12,7 @@ export default function CustomInput({ placeholder, isPassword = false }) {
       <TextInput
         style={styles.input}
         placeholder={placeholder}
+        placeholderTextColor={"gray"}
         secureTextEntry={!isVisible}
       />
       {isPassword && (

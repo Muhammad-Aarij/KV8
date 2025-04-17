@@ -35,13 +35,13 @@ export default function index() {
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 30,
+        paddingTop: 30,
         padding: 20,
         flex: 1,
-        // alignItems: "center",
+        backgroundColor: "white",
     },
     text: {
-        marginLeft:5,
+        marginLeft: 5,
         marginTop: 20,
         fontFamily: "Urbanist-Medium",
         fontSize: 16,
@@ -49,20 +49,20 @@ const styles = StyleSheet.create({
     box: {
         borderRadius: 19,
         marginVertical: 20,
-        marginBottom:50,
+        marginBottom: 50,
         width: "100%",
         flexDirection: "row",
-        alignItems:"center",
+        alignItems: "center",
         borderWidth: 1,
         borderColor: theme.colors.text,
         overflow: 'hidden',
     },
     imageContainer: {
-        margin:20,
-        justifyContent:"center",
-        alignItems:"center",
+        margin: 20,
+        justifyContent: "center",
+        alignItems: "center",
         padding: 10,
-        borderRadius:100,
+        borderRadius: 100,
         backgroundColor: "#4E74F914",
     },
 })
