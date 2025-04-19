@@ -1,10 +1,11 @@
 import React from 'react'
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, Modal, StyleSheet, Text, View } from 'react-native'
 import Header from '../../components/Header'
 import forgetpassword from '../../assets/forgetpassword.png'
 import Message from '../../assets/Message.png'
 import theme from '../../themes/theme'
 import Button from '../../components/Button'
+import CongratulationsModal from '../../components/CongratulationsModal'
 
 export default function index() {
     return (
@@ -28,6 +29,7 @@ export default function index() {
 
                 <Button title={"Continue"} />
             </View>
+            <CongratulationsModal/>
         </>
     )
 }
