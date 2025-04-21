@@ -3,7 +3,7 @@ import { View, Text, Image, StyleSheet, Pressable } from "react-native";
 import theme from "../themes/theme";
 import arrow from '../assets/arrow.png'
 
-export default function Header({ title,onPress }) {
+export default function Header({ title, onPress }) {
     return (
         <View style={styles.header} >
             <Pressable onPress={onPress}>
@@ -21,14 +21,14 @@ const styles = StyleSheet.create({
         width: "100%",
         flexDirection: "row",
         alignItems: "center",
-        backgroundColor:"white",
+        backgroundColor: "white",
         paddingHorizontal: 20,
         paddingTop: 30,
         gap: 20,
     },
     logo: {
-        width: 25,
-        height: 25,
+        width: 22,
+        height: 22,
         resizeMode: "contain",
     },
     title: {

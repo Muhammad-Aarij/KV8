@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import { Image, Modal, StyleSheet, Text, View, Animated } from "react-native";
-import tick from "../assets/modaltick.png";
-import spinner from "../assets/spinner.png";
+// import tick from "../assets/modaltick.png";
+// import spinner from "../assets/spinner.png";
+import { tick,spinner } from "../assets/images";
 
 export default function CongratulationsModal({ visible }) {
     const spinValue = useRef(new Animated.Value(0)).current;
