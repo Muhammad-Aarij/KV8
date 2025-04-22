@@ -7,6 +7,10 @@ import RightArrow from '../assets/rightarrow.png';
 import Profile from '../assets/Profile.png';
 import Notification from '../assets/Notification.png';
 import InfoSquare from '../assets/Info-Square.png';
+import Headphone from '../assets/headphone.png';
+import DownArrow from '../assets/DownArrow.png';
+import UpArrow from '../assets/UpArrow.png';
+import Alert from '../assets/alert.png';
 
 
-export { tick, spinner, deleteRed, Logoutblack, RightArrow, Profile ,Notification,InfoSquare,Logout};
+export { tick, spinner, deleteRed, Logoutblack, RightArrow, Profile, Notification, InfoSquare, Logout, Headphone,DownArrow,UpArrow,Alert };

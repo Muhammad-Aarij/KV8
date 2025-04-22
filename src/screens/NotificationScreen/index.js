@@ -13,11 +13,13 @@ const Index = () => {
                 {/* <Text style={styles.header}>Notification</Text> */}
                 <View style={styles.row}>
                     <Text style={styles.label}>General Notification</Text>
-                    <Switch value={general} onValueChange={setGeneral} />
+                    <Switch trackColor={{ false: '#E5E4E2', true: '#E5E4E2' }}
+                        thumbColor={general ? '#000000' : '#C0C0C0'} value={general} onValueChange={setGeneral} />
                 </View>
                 <View style={styles.row}>
                     <Text style={styles.label}>Sound</Text>
-                    <Switch value={sound} onValueChange={setSound} />
+                    <Switch trackColor={{ false: '#E5E4E2', true: '#E5E4E2' }}
+                        thumbColor={sound ? '#000000' : '#C0C0C0'} value={sound} onValueChange={setSound} />
                 </View>
             </View>
         </>
@@ -35,10 +37,10 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         alignItems: 'center',
     },
-    label: { 
+    label: {
         fontSize: 16,
-        color:"#212121",
-        fontFamily:"Urbanist-SemiBold",
+        color: "#212121",
+        fontFamily: "Urbanist-SemiBold",
 
-     },
+    },
 });
