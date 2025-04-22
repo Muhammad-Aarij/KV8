@@ -9,6 +9,8 @@ const theme = {
     success: "#4CAF50", // Green
     danger: "#FF3A1E", // Red
     blue: "#007AFF", // Blue
+    gray:"#474747",
+    darkGray:"#202020",
   },
 
   sizes: {

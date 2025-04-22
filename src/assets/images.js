@@ -11,6 +11,9 @@ import Headphone from '../assets/headphone.png';
 import DownArrow from '../assets/DownArrow.png';
 import UpArrow from '../assets/UpArrow.png';
 import Alert from '../assets/alert.png';
+import arrow from '../assets/arrow.png'
+import Send from '../assets/Send.png'
+import User from '../assets/user.png'
 
 
-export { tick, spinner, deleteRed, Logoutblack, RightArrow, Profile, Notification, InfoSquare, Logout, Headphone,DownArrow,UpArrow,Alert };
+export { tick, spinner, deleteRed, Logoutblack, RightArrow, Profile, Notification, InfoSquare, Logout, Headphone, DownArrow, UpArrow, Alert, arrow, Send,User };

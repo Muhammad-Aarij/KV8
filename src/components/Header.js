@@ -1,8 +1,7 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, Pressable } from "react-native";
 import theme from "../themes/theme";
-import arrow from '../assets/arrow.png'
-
+import { arrow } from "../assets/images";
 export default function Header({ title, onPress }) {
     return (
         <View style={styles.header} >
