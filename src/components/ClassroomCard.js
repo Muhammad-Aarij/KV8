@@ -2,12 +2,16 @@ import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import theme from "../themes/theme";
 import RadialProgress from "./RadialProgress";
+import { Scholar, User } from "../assets/images";
 
-export default function ClassroomCard({ title, students, teacher, email, attendance, image }) {
+export default function ClassroomCard({ nature = "classroom", title, students, teacher, email, attendance, image }) {
   return (
     <View style={styles.card}>
       {/* Classroom Info */}
-      <Text style={styles.cardTitle}>{title}</Text>
+      <View style={{ flexDirection: "row", alignItems: "center", gap: 5,marginBottom:5, }}>
+        <Image style={styles.Image} source={Scholar} />
+        <Text style={styles.cardTitle}>{title}</Text>
+      </View>
       <View style={styles.studentCount}>
         <Text style={styles.cardSubtitleNumber}>{students}</Text>
         <Text style={styles.cardSubtitle}>Students</Text>
@@ -20,14 +24,14 @@ export default function ClassroomCard({ title, students, teacher, email, attenda
       <Text style={styles.assignTitle}>Assign to:</Text>
       <View style={styles.teacherInfo}>
         <View style={styles.teacherDetails}>
-          <Image style={styles.teacherImage} source={image} />
+          <Image style={styles.teacherImage} source={User} />
           <View>
             <Text style={styles.cardTeacher}>{teacher}</Text>
             <Text style={styles.mail}>{email}</Text>
           </View>
         </View>
         <TouchableOpacity style={styles.enterBtn}>
-          <Text style={styles.enterBtnText}>Enter Class</Text>
+          <Text style={styles.enterBtnText}>{nature == "classroom" ? "Enter Class" : "View Grade Group"}</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -88,6 +92,12 @@ const styles = StyleSheet.create({
     resizeMode: "cover",
     borderRadius: 50,
     marginRight: 10,
+  },
+  Image: {
+    width: 26,
+    height: 28,
+    resizeMode: "contain",
+    // marginRight: 10,
   },
   cardTeacher: {
     fontSize: 13,

@@ -5,6 +5,7 @@ import Header2 from "../../components/Header2";
 import Community from "./Community";
 import Messaging from "./Messaging";
 import Classroom from "./Classroom";
+import Grade from "./Grade";
 
 
 const Index = () => {
@@ -37,6 +38,8 @@ const Index = () => {
       {activeTab == "Community" && <Community />}
       {activeTab == "Messaging" && <Messaging />}
       {activeTab == "Classroom" && <Classroom />}
+      {activeTab == "Grade Group" && <Grade />}
+      
     </View>
   );
 };

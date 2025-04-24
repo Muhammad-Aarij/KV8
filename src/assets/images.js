@@ -15,6 +15,11 @@ import arrow from '../assets/arrow.png'
 import Send from '../assets/Send.png'
 import Search from '../assets/Search.png'
 import User from '../assets/user2.jpg'
+import Scholar from '../assets/scholar.png'
 
 
-export { tick, spinner, deleteRed, Logoutblack, RightArrow, Profile, Notification, InfoSquare, Logout, Headphone, DownArrow, UpArrow, Alert, arrow, Send,User,Search };
+export {
+    tick, spinner, deleteRed, Logoutblack, RightArrow, Profile,
+    Notification, InfoSquare, Logout, Headphone, DownArrow, UpArrow, Alert, arrow, Send, User, Search,
+    Scholar
+};
