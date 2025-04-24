@@ -11,17 +11,16 @@ const Header2 = () => {
             <View style={styles.line}>
                 <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
                     <Image
-                        source={user} 
+                        source={user}
                         style={styles.user}
                     />
                     <View>
-
                         <Text style={styles.greeting}>Good Morning 👋</Text>
                         <Text style={styles.username}>Andrew Ainsley</Text>
                     </View>
                 </View>
                 <Image
-                    source={bell} 
+                    source={bell}
                     style={styles.avatar}
                 />
             </View>

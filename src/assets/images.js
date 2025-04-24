@@ -13,7 +13,8 @@ import UpArrow from '../assets/UpArrow.png';
 import Alert from '../assets/alert.png';
 import arrow from '../assets/arrow.png'
 import Send from '../assets/Send.png'
-import User from '../assets/user.png'
+import Search from '../assets/Search.png'
+import User from '../assets/user2.jpg'
 
 
-export { tick, spinner, deleteRed, Logoutblack, RightArrow, Profile, Notification, InfoSquare, Logout, Headphone, DownArrow, UpArrow, Alert, arrow, Send,User };
+export { tick, spinner, deleteRed, Logoutblack, RightArrow, Profile, Notification, InfoSquare, Logout, Headphone, DownArrow, UpArrow, Alert, arrow, Send,User,Search };

@@ -5,8 +5,8 @@
 import {AppRegistry} from 'react-native';
 import App from './App';
 import {name as appName} from './app.json';
-import splashScreen1 from './src/screens/splash4/index.js';
+import splashScreen1 from './src/screens/splash2/index.js';
 import RoleSelectionScreen from './src/screens/roleSelectionScreen/RoleSelectionScreen.js';
-import Signin from './src/screens/ChatScreen/index.js'
+import Signin from './src/screens/Home/index.js'
 
 AppRegistry.registerComponent(appName, () => Signin);
