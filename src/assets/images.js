@@ -16,10 +16,11 @@ import Send from '../assets/Send.png'
 import Search from '../assets/Search.png'
 import User from '../assets/user2.jpg'
 import Scholar from '../assets/scholar.png'
+import Calendarimg from '../assets/calendar.png'
 
 
 export {
     tick, spinner, deleteRed, Logoutblack, RightArrow, Profile,
     Notification, InfoSquare, Logout, Headphone, DownArrow, UpArrow, Alert, arrow, Send, User, Search,
-    Scholar
+    Scholar, Calendarimg
 };
