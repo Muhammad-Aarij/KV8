@@ -8,7 +8,8 @@ import CustomInput from "../../components/CustomInput";
 import checkBoxCheckedIcon from "../../assets/checbox.png";
 import checkBoxUncheckedIcon from "../../assets/unchecked.png";
 
-export default function Index() {
+export default function Index({ route, navigation }) {
+    const role = route.params;
     const [rememberMe, setRememberMe] = useState(false);
 
     return (
@@ -46,14 +47,14 @@ export default function Index() {
                                 style={styles.checkboxIcon}
                             />
                         </TouchableOpacity>
-                        <Text style={{...styles.label,marginBottom:4,marginLeft:0}}>Remember Me</Text>
+                        <Text style={{ ...styles.label, marginBottom: 4, marginLeft: 0 }}>Remember Me</Text>
                     </View>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate("Forget Password")} >
                         <Text style={[styles.label, styles.forgotPassword]}>Forgot Password?</Text>
                     </TouchableOpacity>
                 </View>
 
-                <Button title="Sign In" />
+                <Button title="Sign In" onPress={() => navigation.navigate('Main')} />
             </View>
         </View>
     );

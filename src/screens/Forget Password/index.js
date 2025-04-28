@@ -7,7 +7,7 @@ import theme from '../../themes/theme'
 import Button from '../../components/Button'
 import CongratulationsModal from '../../components/CongratulationsModal'
 
-export default function index() {
+export default function Index({ navigation }) {
     return (
         <>
             <Header title={"Forget Password"} />
@@ -27,9 +27,9 @@ export default function index() {
                     </View>
                 </View>
 
-                <Button title={"Continue"} />
+                <Button title={"Continue"} onPress={() =>navigation.navigate("Otp Verification")} />
             </View>
-            <CongratulationsModal/>
+            {/* <CongratulationsModal/> */}
         </>
     )
 }

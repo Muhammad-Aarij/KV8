@@ -1,11 +1,13 @@
 // components/Header.js
 import React from 'react';
-import { View, Text, Image, StyleSheet, ImageBackground } from 'react-native';
+import { View, Text, Image, StyleSheet, ImageBackground, Pressable } from 'react-native';
 import Head from '../assets/Head.png';
 import bell from '../assets/bell.png';
 import user from '../assets/user.png';
+import { useNavigation } from '@react-navigation/native';
 
-const Header2 = () => {
+const Header2 = ({ }) => {
+    const navigation = useNavigation();
     return (
         <ImageBackground source={Head} style={styles.header}>
             <View style={styles.line}>
@@ -19,10 +21,12 @@ const Header2 = () => {
                         <Text style={styles.username}>Andrew Ainsley</Text>
                     </View>
                 </View>
-                <Image
-                    source={bell}
-                    style={styles.avatar}
-                />
+                <Pressable onPress={() => navigation.navigate("NotificationAlert")}>
+                    <Image
+                        source={bell}
+                        style={styles.avatar}
+                    />
+                </Pressable>
             </View>
         </ImageBackground>
     );

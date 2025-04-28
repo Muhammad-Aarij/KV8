@@ -1,14 +1,12 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Image, StyleSheet, ImageBackground, ScrollView } from "react-native";
 import theme from "../../themes/theme";
-import logo from "../../assets/logo.png";
-import adminIcon from "../../assets/role1.png";
-import teacherIcon from "../../assets/role2.png";
-import parentIcon from "../../assets/role3.png";
-import studentIcon from "../../assets/role3.png"; // Changed to avoid duplicate
-import bg from "../../assets/Head.png";
+import { logo, adminIcon, teacherIcon, parentIcon, studentIcon, bg } from "../../assets/images";
+import { useNavigation } from "@react-navigation/native";
 
 export default function RoleSelectionScreen() {
+    const navigation = useNavigation();
+
     const roles = [
         {
             title: "Administrator",
@@ -48,7 +46,7 @@ export default function RoleSelectionScreen() {
             {/* Scrollable Role Selection */}
             <ScrollView contentContainerStyle={styles.roleContainer} showsVerticalScrollIndicator={false}>
                 {roles.map((role, index) => (
-                    <TouchableOpacity key={index} style={styles.roleButton} onPress={() => console.log(`${role.title} selected`)}>
+                    <TouchableOpacity key={index} style={styles.roleButton} onPress={() => navigation.navigate("Sign In", { role: role.title })}>
                         <View style={styles.iconContainer}>
                             <Image style={styles.icon} source={role.icon} />
                         </View>

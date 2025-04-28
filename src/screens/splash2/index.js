@@ -3,9 +3,11 @@ import { View, Text, Image, Animated, StyleSheet, TouchableOpacity } from "react
 import theme from "../../themes/theme";
 import logo from "../../assets/splash2.png";
 import Button from "../../components/Button";
+import { useNavigation } from "@react-navigation/native";
 
-export default function index() {
+export default function Index() {
 
+    const navigation = useNavigation();
 
     return (
         <View style={styles.container}>
@@ -18,14 +20,14 @@ export default function index() {
                 Stay connected with teachers, parents, and administrators—all in one secure app.
             </Text>
             <View style={styles.dotContainer}>
-           
-                           <View style={styles.rectangle}></View>
-                           <View style={styles.cirlce}></View>
-                           <View style={styles.cirlce}></View>
-           
-                       </View>
-                       <Button title={"Continue"} onPress={() => { console.log("Pressed") }} />
-           
+
+                <View style={styles.rectangle}></View>
+                <View style={styles.cirlce}></View>
+                <View style={styles.cirlce}></View>
+
+            </View>
+            <Button title={"Continue"} onPress={() => { navigation.navigate("Splash3") }} />
+
         </View>
     );
 }
@@ -47,12 +49,12 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff",
     },
     logo: {
-        width:"100%",
+        width: "100%",
         flex: 1,
         resizeMode: "contain",
     },
     text: {
-        fontFamily:"Urbanist-Bold",
+        fontFamily: "Urbanist-Bold",
         // fontFamily:"Urbanist-Medium",
         fontSize: 20,
         // fontWeight: "bold",
@@ -61,7 +63,7 @@ const styles = StyleSheet.create({
         marginTop: 20,
     },
     subText: {
-        fontFamily:"Urbanist-Medium",
+        fontFamily: "Urbanist-Medium",
         fontSize: 15,
         color: theme.colors.text,
         textAlign: "center",
@@ -83,20 +85,20 @@ const styles = StyleSheet.create({
         height: 120,
         resizeMode: "contain",
     },
-    dotContainer:{
+    dotContainer: {
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
         marginVertical: 30,
     },
-    cirlce:{
+    cirlce: {
         width: 10,
         height: 10,
         borderRadius: 5,
         backgroundColor: theme.colors.primary,
         marginHorizontal: 5,
     },
-    rectangle:{
+    rectangle: {
         width: 30,
         height: 10,
         borderRadius: 5,

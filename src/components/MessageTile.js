@@ -2,8 +2,10 @@ import React from 'react';
 import { User } from '../assets/images';
 import theme from '../themes/theme';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 export default function MessageTile() {
+    const navigation = useNavigation();
     return (
         <View style={styles.card}>
             <View style={styles.userInfo}>
@@ -13,7 +15,7 @@ export default function MessageTile() {
                     <Text style={styles.userEmail}>AndrewAinsley@21gmail.io</Text>
                 </View>
             </View>
-            <TouchableOpacity style={styles.messageButton}>
+            <TouchableOpacity style={styles.messageButton} onPress={()=>navigation.navigate("ChatScreen")}>
                 <Text style={styles.messageText}>Message</Text>
             </TouchableOpacity>
         </View>
@@ -39,7 +41,8 @@ const styles = StyleSheet.create({
     userImage: {
         width: 34,
         height: 34,
-        resizeMode: "contain",
+        borderRadius: 100,
+        resizeMode: "cover",
         marginRight: 10,
     },
     userName: {

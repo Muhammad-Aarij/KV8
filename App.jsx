@@ -1,54 +1,58 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { View, Text } from "react-native";
-import Home from './src/screens/Home/index';
-import Splash1 from './src/screens/splash1/index';
-import Splash2 from './src/screens/splash2/index';
-import Splash3 from './src/screens/splash3/index';
-import Splash4 from './src/screens/splash4/index';
+import Home from "./src/screens/Home";
+import Splash1 from "./src/screens/splash1/index";
+import Splash2 from "./src/screens/splash2/index";
+import Splash3 from "./src/screens/splash3/index";
+import Splash4 from "./src/screens/splash4";
 import RoleSelectionScreen from "./src/screens/roleSelectionScreen/RoleSelectionScreen";
 import OtpVerification from "./src/screens/Otp Verification/index";
 import SignIn from "./src/screens/SignIn/index";
-import SignIn from "./src/screens/SignIn/index";
 import NotificationScreen from "./src/screens/NotificationScreen/index";
-import NotificationAlertScreen from "./src/screens/NotificationAlertScreen/index";
+import NotificationAlertScreen from "./src/screens/NotificationAlertScreen";
 import NewPassword from "./src/screens/New Password/index";
 import ForgetPassword from "./src/screens/Forget Password/index";
 import FAQScreen from "./src/screens/FAQScreen/index";
 import ExamSchedule from "./src/screens/Exam Schedule/index";
-import ChatScreen from "./src/screens/Chat Screen/index";
+import ChatScreen from "./src/screens/ChatScreen/index";
+import Profile from "./src/screens/My Profile/index";
 
-
-// Dummy Screens
-const HomeScreen = () => <View><Text>Home Screen</Text></View>;
-const SettingsScreen = () => <View><Text>Settings Screen</Text></View>;
-
-const Stack = createStackNavigator();
+const NativeStack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 function BottomTabs() {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Calendar" component={Calendar} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
+    <Tab.Navigator screenOptions={{ headerShown: false }}>
+      <Tab.Screen name='Home' component={Home} />
+      <Tab.Screen name="Profile" component={Profile} />
+      {/* <Tab.Screen name="Assignment" component={Assignment} /> */}
     </Tab.Navigator>
   );
 }
 
+{/* <NativeStack.Screen name="Main" component={BottomTabs} /> */ }
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Main" component={BottomTabs} options={{ headerShown: false }} />
-        {/* <Stack.Screen name="Details" component={Calendar} /> */}
-        <Stack.Screen name="Splash1" component={Splash1} />
-        <Stack.Screen name="Splash2" component={Splash2} />
-        <Stack.Screen name="Splash3" component={Splash3} />
-        <Stack.Screen name="Splash4" component={Splash4} />
-      </Stack.Navigator>
+    <NavigationContainer  >
+      <NativeStack.Navigator initialRouteName="Main" screenOptions={{ headerShown: false }}>
+        <NativeStack.Screen name="Splash1" component={Splash1} />
+        <NativeStack.Screen name="Splash2" component={Splash2} />
+        <NativeStack.Screen name="Splash3" component={Splash3} />
+        <NativeStack.Screen name="ChatScreen" component={ChatScreen} />
+        <NativeStack.Screen name="Splash4" component={Splash4} />
+        <NativeStack.Screen name="Role Selection" component={RoleSelectionScreen} />
+        <NativeStack.Screen name="Otp Verification" component={OtpVerification} />
+        <NativeStack.Screen name="Sign In" component={SignIn} />
+        <NativeStack.Screen name="Notification" component={NotificationScreen} />
+        <NativeStack.Screen name="NotificationAlert" component={NotificationAlertScreen} />
+        <NativeStack.Screen name="New Password" component={NewPassword} />
+        <NativeStack.Screen name="Forget Password" component={ForgetPassword} />
+        <NativeStack.Screen name="FAQ" component={FAQScreen} />
+        <NativeStack.Screen name="Main" component={BottomTabs} />
+      </NativeStack.Navigator>
     </NavigationContainer>
+
   );
 }

@@ -2,15 +2,17 @@ import React from "react";
 import { View, Text, Image, StyleSheet, Pressable } from "react-native";
 import theme from "../themes/theme";
 import { arrow } from "../assets/images";
-export default function Header({ title, onPress }) {
+import { useNavigation } from "@react-navigation/native";
+export default function Header({ title, }) {
+    const navigation = useNavigation();
     return (
         <View style={styles.header} >
-            <Pressable onPress={onPress}>
+            <Pressable onPress={() => { navigation.goBack() }}>
                 <Image style={styles.logo} source={arrow} />
-            </Pressable>
+            </Pressable >
 
             <Text style={styles.title}>{title}</Text>
-        </View>
+        </View >
 
     );
 }

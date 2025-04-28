@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { View, Text, ScrollView, TextInput, StyleSheet, TouchableOpacity, FlatList, Image } from "react-native";
-import user from "../../assets/user.png";
-import dots from '../../assets/dot.png';
+import AssignmentTile from '../../components/AssignmentTile';
+import NewsTile from '../../components/NewsTile';
 export default function Community() {
 
     const [filter, setFilter] = useState("News");
@@ -62,24 +62,11 @@ export default function Community() {
             {filter != "Assignments" &&
                 <View style={styles.postContainer}>
                     <FlatList
-                    showsVerticalScrollIndicator={false}
+                        showsVerticalScrollIndicator={false}
                         data={posts}
                         keyExtractor={(item) => item.id}
                         renderItem={({ item }) => (
-                            <View style={styles.postCard}>
-                                <View style={styles.postHeader}>
-                                    <View style={{ flexDirection: "row" }}>
-                                        <Image style={styles.user} source={user} />
-                                        <View>
-                                            <Text style={styles.postUser}>{item.user}</Text>
-                                            <Text style={styles.postMeta}>{item.time} · {item.category}</Text>
-                                        </View>
-                                    </View>
-                                    <Image style={styles.dots} source={dots} />
-                                </View>
-                                <Text style={styles.postTitle}>{item.title}</Text>
-                                <Text style={styles.postBody}>{item.body}</Text>
-                            </View>
+                            <NewsTile user={item.user} title={item.title} body={item.body} time={item.time} category={item.category} />
                         )}
                     />
                 </View>
@@ -89,17 +76,8 @@ export default function Community() {
             {filter === "Assignments" && (
                 <View style={styles.postContainer}>
                     {[1, 2, 3].map((item, index) => (
-                        <View key={index} style={styles.postCard}>
-                            <View style={styles.AssignmentHead}>
-                                <Text style={{ ...styles.postTitle, maxWidth: "78%" }}>
-                                    EC 203 - Principles of Macroeconomics
-                                </Text>
-                                <Text style={{ ...styles.postMeta, fontSize: 9 }}>Due on 25 July</Text>
-                            </View>
-                            <Text style={{...styles.postBody,marginTop:0}}>
-                                Lorem ipsum dolor sit amet consectetur. Pellentesque platea placerat bibendum maecenas.
-                            </Text>
-                        </View>
+
+                        <AssignmentTile key={index} />
                     ))}
                 </View>
             )}
@@ -178,65 +156,5 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingHorizontal: 20,
     },
-    postCard: {
-        backgroundColor: "#f9f9f9",
-        borderRadius: 13,
-        padding: 14,
-        marginBottom: 16,
-        borderWidth: 1,
-        borderColor: "#E0E0E0",
-    },
-    postHeader: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
-        paddingBottom: 12,
-        marginBottom: 12,
-        borderBottomWidth: 1,
-        borderBottomColor: "#E4E4E4",
-    },
-    user: {
-        width: 30,
-        height: 30,
-        borderRadius: 100,
-        marginRight: 8,
-        resizeMode: "cover",
-    },
-    dots: {
-        width: 24,
-        height: 24,
-        resizeMode: "contain",
-    },
-    postUser: {
-        fontFamily: "Urbanist-Bold",
-        fontSize: 14,
-    },
-    postMeta: {
-        fontFamily: "Urbanist-Medium",
-        fontSize: 12,
-        color: "#8C8C8C",
-    },
-    postTitle: {
-        fontFamily: "Urbanist-Bold",
-        fontSize: 15,
-    },
-    postBody: {
-        fontFamily: "Urbanist-Medium",
-        fontSize: 13,
-        lineHeight: 20,
-        color: "#555",
-        marginTop: 5,
-        marginBottom: 10,
-    },
 
-
-    AssignmentHead: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
-        // paddingBottom: 12,
-        marginBottom: 10,
-        // borderBottomWidth: 1,
-        // borderBottomColor: "#E4E4E4",
-    },
 });

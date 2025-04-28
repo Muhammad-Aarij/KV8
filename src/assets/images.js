@@ -17,10 +17,16 @@ import Search from '../assets/Search.png'
 import User from '../assets/user2.jpg'
 import Scholar from '../assets/scholar.png'
 import Calendarimg from '../assets/calendar.png'
-
+import dots from '../assets/dot.png';
+import logo from "../assets/logo.png";
+import adminIcon from "../assets/role1.png";
+import teacherIcon from "../assets/role2.png";
+import parentIcon from "../assets/role3.png";
+import studentIcon from "../assets/role3.png";
+import bg from "../assets/Head.png";
 
 export {
     tick, spinner, deleteRed, Logoutblack, RightArrow, Profile,
     Notification, InfoSquare, Logout, Headphone, DownArrow, UpArrow, Alert, arrow, Send, User, Search,
-    Scholar, Calendarimg
+    Scholar, Calendarimg, logo, adminIcon, teacherIcon, parentIcon, studentIcon, bg, dots
 };

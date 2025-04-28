@@ -3,9 +3,11 @@ import { View, Text, Image, Animated, StyleSheet, TouchableOpacity } from "react
 import theme from "../../themes/theme";
 import logo from "../../assets/splash4.png";
 import Button from "../../components/Button";
+import { useNavigation } from "@react-navigation/native";
 
-export default function index() {
+export default function Index() {
 
+    const navigation = useNavigation();
 
     return (
         <View style={styles.container}>
@@ -24,7 +26,7 @@ export default function index() {
                 <View style={styles.rectangle}></View>
 
             </View>
-            <Button title={"Get Started"} onPress={() => { console.log("Pressed") }} />
+            <Button title={"Get Started"} onPress={() => { navigation.navigate("Role Selection") }} />
 
         </View>
     );

@@ -5,7 +5,7 @@ import forgetpassword from "../../assets/OtpVerification.png";
 import theme from "../../themes/theme";
 import Button from "../../components/Button";
 
-export default function Index() {
+export default function Index({ navigation }) {
   const [otp, setOtp] = useState(["", "", "", ""]); // Stores 4-digit OTP
   const [activeIndex, setActiveIndex] = useState(0); // Tracks active box index
   const inputRefs = useRef([]); // Stores input field references
@@ -85,7 +85,7 @@ export default function Index() {
           </TouchableOpacity>
         )}
 
-        <Button title="Continue" />
+        <Button title="Continue" onPress={() => navigation.navigate("New Password")} />
       </View>
     </>
   );

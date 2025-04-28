@@ -3,8 +3,10 @@ import { Image, StyleSheet, View, Animated } from "react-native";
 import logo from "../../assets/logo.png";
 import left from "../../assets/left.png";
 import right from "../../assets/right.png";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Index() {
+  const navigation = useNavigation();
   const borderAnimation = useRef(new Animated.Value(20)).current; // Start from 20
 
   useEffect(() => {
@@ -28,15 +30,19 @@ export default function Index() {
     animateBorder();
   }, []);
 
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.navigate("Splash2")
+    }, 2000);
+  })
+
   return (
     <View style={styles.container}>
       <Animated.View style={[styles.logoContainer, { borderWidth: borderAnimation }]}>
         <Image style={styles.logo} source={logo} />
       </Animated.View>
-
       {/* Left Image */}
       <Image style={styles.left} source={left} />
-
       {/* Right Image */}
       <Image style={styles.right} source={right} />
     </View>

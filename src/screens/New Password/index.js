@@ -7,7 +7,7 @@ import theme from '../../themes/theme'
 import Button from '../../components/Button'
 import CustomInput from '../../components/CustomInput'
 
-export default function index() {
+export default function Index() {
     return (
         <>
             <Header title={"Create a New Password"} />
