@@ -3,12 +3,15 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import theme from "../themes/theme";
 import RadialProgress from "./RadialProgress";
 import { Scholar, User } from "../assets/images";
+import { useNavigation } from "@react-navigation/native";
+
 
 export default function ClassroomCard({ nature = "classroom", title, students, teacher, email, attendance, image }) {
+  const navigation = useNavigation();
   return (
     <View style={styles.card}>
       {/* Classroom Info */}
-      <View style={{ flexDirection: "row", alignItems: "center", gap: 5,marginBottom:5, }}>
+      <View style={{ flexDirection: "row", alignItems: "center", gap: 5, marginBottom: 5, }}>
         <Image style={styles.Image} source={Scholar} />
         <Text style={styles.cardTitle}>{title}</Text>
       </View>
@@ -30,7 +33,7 @@ export default function ClassroomCard({ nature = "classroom", title, students, t
             <Text style={styles.mail}>{email}</Text>
           </View>
         </View>
-        <TouchableOpacity style={styles.enterBtn}>
+        <TouchableOpacity style={styles.enterBtn} onPress={() => { navigation.navigate("GradeGroup") }}>
           <Text style={styles.enterBtnText}>{nature == "classroom" ? "Enter Class" : "View Grade Group"}</Text>
         </TouchableOpacity>
       </View>

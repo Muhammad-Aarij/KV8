@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, FlatList, StyleSheet, SafeAreaView } from 'react-native';
+import { View, Text, TouchableOpacity, FlatList, StyleSheet, SafeAreaView, ScrollView } from 'react-native';
 import Header from '../../components/Header';
 
 const examScheduleData = {
@@ -36,8 +36,8 @@ const CalendarScreen = () => {
 
     return (
         <>
-            <Header title={"Exam Schedule"} />
-            <SafeAreaView style={styles.container}>
+            <Header title={"Exam Schedule"} navigateTo={"Main"}/>
+            <ScrollView style={styles.container}>
                 {/* Month Navigation */}
                 <View style={styles.calender}>
                     <Text style={styles.monthText}>
@@ -102,7 +102,7 @@ const CalendarScreen = () => {
                     )}
                     contentContainerStyle={styles.examList}
                 />
-            </SafeAreaView >
+            </ScrollView >
         </>
     );
 };
@@ -115,6 +115,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         paddingTop: 30,
         paddingHorizontal: 20,
+        paddingBottom: 50,
     },
     monthRow: {
         justifyContent: 'center',

@@ -3,14 +3,18 @@ import { View, Text, Image, StyleSheet, Pressable } from "react-native";
 import theme from "../themes/theme";
 import { arrow } from "../assets/images";
 import { useNavigation } from "@react-navigation/native";
-export default function Header({ title, }) {
+
+export default function Header({ title, navigateTo }) {
     const navigation = useNavigation();
     return (
         <View style={styles.header} >
-            <Pressable onPress={() => { navigation.goBack() }}>
-                <Image style={styles.logo} source={arrow} />
-            </Pressable >
+            <Pressable onPress={() => {
+                console.log("Navigte TO :"+navigateTo);
+                navigateTo ? navigation.navigate(navigateTo) : navigation.goBack();
 
+            }}>
+                <Image style={styles.logo} source={arrow} />
+            </Pressable>
             <Text style={styles.title}>{title}</Text>
         </View >
 
@@ -36,6 +40,5 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontFamily: "Urbanist-Bold",
         color: "black",
-
     },
 });

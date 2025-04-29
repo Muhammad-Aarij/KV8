@@ -8,7 +8,7 @@ const classrooms = [
     { id: "3", title: "Grade 9th", attendance: 78, students: 60, teacher: "John Smith", email: "JohnSmith@edu.org" },
 ];
 
-export default function Grade() {
+export default function Grade({navigation}) {
     return (
         <View style={styles.container}>
             <FlatList

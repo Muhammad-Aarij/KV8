@@ -1,17 +1,26 @@
 import React from 'react'
-import { StyleSheet, TextInput, View } from 'react-native'
+import { ScrollView, StyleSheet, TextInput, View } from 'react-native'
 import AssignmentTile from '../../components/AssignmentTile'
 import NewsTile from '../../components/NewsTile'
+import ExamTile from '../../components/ExamTile'
 
 export default function ClassroomDetails() {
     return (
-        <View>
+        <ScrollView style={{ paddingBottom: 50, }} showsVerticalScrollIndicator={false}>
             <TextInput
                 style={styles.input}
                 placeholder="Write something..."
                 placeholderTextColor="#999"
                 multiline
             />
+            {"Exam" === "Exam" && (
+                <View style={styles.postContainer}>
+                    {[1].map((item, index) => (
+
+                        <ExamTile key={index} />
+                    ))}
+                </View>
+            )}
             {"Assignments" === "Assignments" && (
                 <View style={styles.postContainer}>
                     {[1].map((item, index) => (
@@ -24,13 +33,15 @@ export default function ClassroomDetails() {
                 <View style={styles.postContainer}>
                     {[1].map((item, index) => (
 
-                        <NewsTile key={index} />
+                        <NewsTile user={"Andrew White"} title={"School’s roadmap – what’s coming soon"} body={"Meeting scheduled for next Monday. Please confirm attendance..."} time={"2 hours ago"} category={"Announcement"} />
+
                     ))}
                 </View>
             )}
 
 
-        </View>
+
+        </ScrollView>
     )
 }
 

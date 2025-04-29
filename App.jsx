@@ -18,6 +18,7 @@ import FAQScreen from "./src/screens/FAQScreen/index";
 import ExamSchedule from "./src/screens/Exam Schedule/index";
 import ChatScreen from "./src/screens/ChatScreen/index";
 import Profile from "./src/screens/My Profile/index";
+import GradeGroup from './src/screens/Grade/index';
 
 const NativeStack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -50,6 +51,8 @@ export default function App() {
         <NativeStack.Screen name="New Password" component={NewPassword} />
         <NativeStack.Screen name="Forget Password" component={ForgetPassword} />
         <NativeStack.Screen name="FAQ" component={FAQScreen} />
+        <NativeStack.Screen name="ExamSchedule" component={ExamSchedule} />
+        <NativeStack.Screen name="GradeGroup" component={GradeGroup} />
         <NativeStack.Screen name="Main" component={BottomTabs} />
       </NativeStack.Navigator>
     </NavigationContainer>

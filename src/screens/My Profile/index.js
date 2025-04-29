@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView, } from 're
 import ConfirmationModal from '../../components/ConfirmationModal';
 import { RightArrow, deleteRed, Profile, Notification, InfoSquare, Logout } from '../../assets/images';
 
-const Index = () => {
+const Index = ({navigation}) => {
     const [modalVisible, setModalVisible] = useState(false);
     const [actionTitle, setActionTitle] = useState('');
 
@@ -43,9 +43,11 @@ const Index = () => {
                     />
                     <Option title="Notification"
                         icon={Notification}
-                    />
+                        onPress={()=>navigation.navigate("Notification")}
+                        />
                     <Option title="Help Center"
                         icon={InfoSquare}
+                        onPress={()=>navigation.navigate("FAQ")}
                     />
                     <Option title="Delete Account"
                         color="#D60000"
