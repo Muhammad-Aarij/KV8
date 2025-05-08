@@ -1,22 +1,39 @@
-import React from 'react'
-import { StyleSheet, View, Text, } from 'react-native'
+import React, { useState } from 'react';
+import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
+import { dots } from '../assets/images';
 
-export default function AssignmentTile() {
+export default function AssignmentTile({ state }) {
+    const [showOptions, setShowOptions] = useState(false);
+
     return (
         <View style={styles.postCard}>
             <View style={styles.AssignmentHead}>
                 <Text style={{ ...styles.postTitle, maxWidth: "78%" }}>
                     EC 203 - Principles of Macroeconomics
                 </Text>
-                <Text style={{ ...styles.postMeta, fontSize: 9 }}>Due on 25 July</Text>
+
+                {state === "Assignment" ? (
+                    <TouchableOpacity onPress={() => setShowOptions(prev => !prev)}>
+                        <Image style={styles.dots} source={dots} />
+                    </TouchableOpacity>
+                ) : (
+                    <Text style={{ ...styles.postMeta, fontSize: 9 }}>Due on 25 July</Text>
+                )}
             </View>
+
             <Text style={{ ...styles.postBody, marginTop: 0 }}>
                 Lorem ipsum dolor sit amet consectetur. Pellentesque platea placerat bibendum maecenas.
             </Text>
-        </View>
-    )
-}
 
+            {/* Download Button */}
+            {showOptions && (
+                <TouchableOpacity style={styles.downloadBtn}>
+                    <Text style={styles.downloadText}>Download</Text>
+                </TouchableOpacity>
+            )}
+        </View>
+    );
+}
 
 const styles = StyleSheet.create({
     postCard: {
@@ -27,35 +44,10 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: "#E0E0E0",
     },
-    postHeader: {
+    AssignmentHead: {
         flexDirection: "row",
         justifyContent: "space-between",
-        alignItems: "center",
-        paddingBottom: 12,
-        marginBottom: 12,
-        borderBottomWidth: 1,
-        borderBottomColor: "#E4E4E4",
-    },
-    user: {
-        width: 30,
-        height: 30,
-        borderRadius: 100,
-        marginRight: 8,
-        resizeMode: "cover",
-    },
-    dots: {
-        width: 24,
-        height: 24,
-        resizeMode: "contain",
-    },
-    postUser: {
-        fontFamily: "Urbanist-Bold",
-        fontSize: 14,
-    },
-    postMeta: {
-        fontFamily: "Urbanist-Medium",
-        fontSize: 12,
-        color: "#8C8C8C",
+        marginBottom: 10,
     },
     postTitle: {
         fontFamily: "Urbanist-Bold",
@@ -69,9 +61,27 @@ const styles = StyleSheet.create({
         marginTop: 5,
         marginBottom: 10,
     },
-    AssignmentHead: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        marginBottom: 10,
+    dots: {
+        width: 24,
+        height: 24,
+        resizeMode: "contain",
     },
-})
+    postMeta: {
+        fontFamily: "Urbanist-Medium",
+        fontSize: 12,
+        color: "#8C8C8C",
+    },
+    downloadBtn: {
+        alignSelf: "flex-end",
+        marginTop: 5,
+        paddingVertical: 6,
+        paddingHorizontal: 16,
+        backgroundColor: "#000",
+        borderRadius: 8,
+    },
+    downloadText: {
+        color: "#fff",
+        fontFamily: "Urbanist-Medium",
+        fontSize: 13,
+    },
+});

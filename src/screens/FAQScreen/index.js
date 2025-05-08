@@ -52,7 +52,6 @@ const Index = () => {
                 ) : (
                     <View style={styles.contactBox}>
                         <Image source={Headphone} style={{ width: 24, height: 24 }} />
-                        {/* <Icon name="headset-outline" size={24} /> */}
                         <Text style={styles.contactText}>Customer Service</Text>
                     </View>
                 )}

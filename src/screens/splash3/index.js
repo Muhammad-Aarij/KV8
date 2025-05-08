@@ -1,33 +1,60 @@
-import React, { useEffect, useRef } from "react";
-import { View, Text, Image, Animated, StyleSheet, TouchableOpacity } from "react-native";
+import React, { useState } from "react";
+import { View, Text, Image, StyleSheet } from "react-native";
 import theme from "../../themes/theme";
-import logo from "../../assets/splash3.png";
 import Button from "../../components/Button";
 import { useNavigation } from "@react-navigation/native";
 
-export default function Index() {
+import splash1 from "../../assets/splash2.png";
+import splash2 from "../../assets/splash3.png";
+import splash3 from "../../assets/splash4.png";
 
+export default function SplashScreen() {
     const navigation = useNavigation();
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const screens = [
+        {
+            image: splash1,
+            title: "Seamless School Communication",
+            subtitle: "Stay connected with teachers, parents, and administrators—all in one secure app.",
+            dots: ["rectangle", "circle", "circle"],
+        },
+        {
+            image: splash2,
+            title: "Instant Notifications & Updates",
+            subtitle: "Never miss important announcements, attendance alerts, or event reminders.",
+            dots: ["circle", "rectangle", "circle"],
+        },
+        {
+            image: splash3,
+            title: "Your School, Your Community",
+            subtitle: "Engage in private, secure messaging and keep track of your child’s progress.",
+            dots: ["circle", "circle", "rectangle"],
+        },
+    ];
+
+    const handleNext = () => {
+        if (currentIndex < screens.length - 1) {
+            setCurrentIndex(currentIndex + 1);
+        } else {
+            navigation.navigate("Role Selection");
+        }
+    };
 
     return (
         <View style={styles.container}>
-            {/* Centered Logo with Animated Border */}
-            <Image style={styles.logo} source={logo} />
+            <Image style={styles.logo} source={screens[currentIndex].image} />
+            <Text style={styles.text}>{screens[currentIndex].title}</Text>
+            <Text style={styles.subText}>{screens[currentIndex].subtitle}</Text>
 
-            {/* Welcome Text */}
-            <Text style={styles.text}>Instant Notifications & Updates</Text>
-            <Text style={styles.subText}>
-                Never miss important announcements, attendance alerts, or event reminders.
-            </Text>
+            {/* Dot Indicators */}
             <View style={styles.dotContainer}>
-
-                <View style={styles.cirlce}></View>
-                <View style={styles.rectangle}></View>
-                <View style={styles.cirlce}></View>
-
+                {screens[currentIndex].dots.map((dot, index) => (
+                    <View key={index} style={dot === "rectangle" ? styles.rectangle : styles.circle} />
+                ))}
             </View>
-            <Button title={"Continue"} onPress={() => { navigation.navigate("Splash4") }} />
 
+            <Button title={currentIndex === screens.length - 1 ? "Get Started" : "Continue"} onPress={handleNext} />
         </View>
     );
 }
@@ -40,14 +67,6 @@ const styles = StyleSheet.create({
         backgroundColor: theme.colors.background,
         padding: 30,
     },
-    logoContainer: {
-        justifyContent: "center",
-        alignItems: "center",
-        borderRadius: 500,
-        borderColor: theme.colors.border,
-        padding: 40,
-        backgroundColor: "#fff",
-    },
     logo: {
         width: "100%",
         flex: 1,
@@ -55,7 +74,6 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 20,
-
         fontFamily: "Urbanist-Bold",
         color: theme.colors.text,
         textAlign: "center",
@@ -68,29 +86,13 @@ const styles = StyleSheet.create({
         textAlign: "center",
         marginTop: 10,
     },
-    left: {
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: 47,
-        height: 119,
-        resizeMode: "contain",
-    },
-    right: {
-        position: "absolute",
-        bottom: 0,
-        right: 0,
-        width: 53,
-        height: 120,
-        resizeMode: "contain",
-    },
     dotContainer: {
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
         marginVertical: 30,
     },
-    cirlce: {
+    circle: {
         width: 10,
         height: 10,
         borderRadius: 5,
@@ -102,6 +104,5 @@ const styles = StyleSheet.create({
         height: 10,
         borderRadius: 5,
         backgroundColor: theme.colors.text,
-        // marginHorizontal: 5,
     },
 });

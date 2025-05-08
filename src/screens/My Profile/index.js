@@ -40,6 +40,7 @@ const Index = ({navigation}) => {
                 <View style={styles.options}>
                     <Option title="Edit Profile"
                         icon={Profile}
+                        onPress={()=>navigation.navigate("EditProfile")}
                     />
                     <Option title="Notification"
                         icon={Notification}

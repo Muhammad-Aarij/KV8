@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, FlatList, StyleSheet, SafeAreaView, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, FlatList, StyleSheet, SafeAreaView, ScrollView, BackHandler } from 'react-native';
 import Header from '../../components/Header';
+
 
 const examScheduleData = {
     '2024-01-02': [{ subject: 'Mathematics', time: '10:00 - 11:00' }],
@@ -22,9 +23,9 @@ const getDaysInMonth = (month, year) => {
 
 const dayNames = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
 
-const CalendarScreen = () => {
+const CalendarScreen = ({ navigation }) => {
     const [selectedDate, setSelectedDate] = useState('2024-01-02');
-    const [currentMonth, setCurrentMonth] = useState(0); // January
+    const [currentMonth, setCurrentMonth] = useState(0);
     const [currentYear, setCurrentYear] = useState(2024);
     const [days, setDays] = useState([]);
 
@@ -34,24 +35,38 @@ const CalendarScreen = () => {
 
     const formatDate = (date) => date.toISOString().split('T')[0];
 
+    useEffect(() => {
+        const backAction = () => {
+            if (navigation.canGoBack()) {
+                navigation.navigate("Main");
+                return true;
+            }
+            return false;
+        };
+        // Add event listener
+        const backHandler = BackHandler.addEventListener(
+            "hardwareBackPress",
+            backAction
+        );
+
+        return () => backHandler.remove();
+    }, []);
+
     return (
         <>
-            <Header title={"Exam Schedule"} navigateTo={"Main"}/>
+            <Header title={"Exam Schedule"} navigateTo={"Main"} />
             <ScrollView style={styles.container}>
-                {/* Month Navigation */}
                 <View style={styles.calender}>
                     <Text style={styles.monthText}>
                         {new Date(currentYear, currentMonth).toLocaleString('default', { month: 'long' })} {currentYear}
                     </Text>
 
-                    {/* Days Header */}
                     <View style={styles.daysHeader}>
                         {dayNames.map((day) => (
                             <Text key={day} style={styles.dayName}>{day}</Text>
                         ))}
                     </View>
 
-                    {/* Calendar Days */}
                     <View style={styles.daysContainer}>
                         {days.map((day, index) => {
                             const dateStr = formatDate(day);
@@ -76,7 +91,6 @@ const CalendarScreen = () => {
                     </View>
                 </View>
 
-                {/* All Exam Schedules */}
                 <FlatList
                     data={Object.entries(examScheduleData)}
                     keyExtractor={(item) => item[0]}

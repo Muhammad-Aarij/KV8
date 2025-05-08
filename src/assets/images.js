@@ -24,9 +24,16 @@ import teacherIcon from "../assets/role2.png";
 import parentIcon from "../assets/role3.png";
 import studentIcon from "../assets/role3.png";
 import bg from "../assets/Head.png";
+import Homegray from "../assets/Home.png";
+import HomeBlack from "../assets/HomeBlack.png";
+import UserBlack from "../assets/UserBlack.png";
+import User1 from "../assets/User1.png";
+import AssignmentBlack from "../assets/AssignmentBlack.png";
+import Assignment from "../assets/Assignment.png";
 
 export {
     tick, spinner, deleteRed, Logoutblack, RightArrow, Profile,
     Notification, InfoSquare, Logout, Headphone, DownArrow, UpArrow, Alert, arrow, Send, User, Search,
-    Scholar, Calendarimg, logo, adminIcon, teacherIcon, parentIcon, studentIcon, bg, dots
+    Scholar, Calendarimg, logo, adminIcon, teacherIcon, parentIcon, studentIcon, bg, dots,Homegray,HomeBlack,User1,UserBlack
+    ,Assignment,AssignmentBlack
 };
