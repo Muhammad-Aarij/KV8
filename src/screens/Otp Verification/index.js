@@ -6,12 +6,11 @@ import theme from "../../themes/theme";
 import Button from "../../components/Button";
 
 export default function Index({ navigation }) {
-  const [otp, setOtp] = useState(["", "", "", ""]); // Stores 4-digit OTP
-  const [activeIndex, setActiveIndex] = useState(0); // Tracks active box index
-  const inputRefs = useRef([]); // Stores input field references
-  const [countdown, setCountdown] = useState(59); // Timer for resend
+  const [otp, setOtp] = useState(["", "", "", ""]); 
+  const [activeIndex, setActiveIndex] = useState(0); 
+  const inputRefs = useRef([]); 
+  const [countdown, setCountdown] = useState(59); 
 
-  // Countdown Timer
   useEffect(() => {
     if (countdown > 0) {
       const timer = setTimeout(() => setCountdown(countdown - 1), 1000);
@@ -24,7 +23,7 @@ export default function Index({ navigation }) {
     let newOtp = [...otp];
 
     if (text.length > 1) {
-      text = text.slice(-1); // Allow only one digit per box
+      text = text.slice(-1); 
     }
 
     newOtp[index] = text;
@@ -45,7 +44,7 @@ export default function Index({ navigation }) {
         newOtp[index] = "";
         setOtp(newOtp);
       } else if (index > 0) {
-        setActiveIndex(index - 1); // Move to previous active box
+        setActiveIndex(index - 1); 
         inputRefs.current[index - 1].focus();
       }
     }
@@ -70,7 +69,7 @@ export default function Index({ navigation }) {
                 value={digit}
                 onChangeText={(text) => handleChange(text, index)}
                 onKeyPress={(event) => handleKeyPress(event, index)}
-                autoFocus={index === 0} // Auto-focus on first box
+                autoFocus={index === 0}
               />
             </View>
           ))}
