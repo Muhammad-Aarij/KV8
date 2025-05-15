@@ -96,7 +96,6 @@ const CalendarScreen = ({ navigation }) => {
                     keyExtractor={(item) => item[0]}
                     renderItem={({ item }) => (
                         <View style={styles.examCard}>
-
                             <View style={{ width: "10%", }}>
                                 <Text style={styles.examDateNumber}>2</Text>
                             </View>

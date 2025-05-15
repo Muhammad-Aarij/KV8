@@ -30,10 +30,16 @@ import UserBlack from "../assets/UserBlack.png";
 import User1 from "../assets/User1.png";
 import AssignmentBlack from "../assets/AssignmentBlack.png";
 import Assignment from "../assets/Assignment.png";
+import graph from "../assets/graph.png";
+import graphBlack from "../assets/graphBlack.png";
+import dollar from "../assets/dollar.png";
+import leftBlue from "../assets/leftBlue.png";
+import rightBlue from "../assets/rightBlue.png";
+
 
 export {
     tick, spinner, deleteRed, Logoutblack, RightArrow, Profile,
     Notification, InfoSquare, Logout, Headphone, DownArrow, UpArrow, Alert, arrow, Send, User, Search,
-    Scholar, Calendarimg, logo, adminIcon, teacherIcon, parentIcon, studentIcon, bg, dots,Homegray,HomeBlack,User1,UserBlack
-    ,Assignment,AssignmentBlack
+    Scholar, Calendarimg, logo, adminIcon, teacherIcon, parentIcon, studentIcon, bg, dots, Homegray, HomeBlack, User1, UserBlack
+    , Assignment, AssignmentBlack, graphBlack, graph, dollar, rightBlue, leftBlue
 };

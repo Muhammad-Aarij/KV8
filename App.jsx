@@ -30,7 +30,7 @@ const Tab = createBottomTabNavigator();
 export default function App() {
   return (
     <NavigationContainer  >
-      <NativeStack.Navigator screenOptions={{ headerShown: false }}>
+      <NativeStack.Navigator initialRouteName="Main" screenOptions={{ headerShown: false }}>
         {/* <NativeStack.Screen name="Splash1" component={Splash1} /> */}
         {/* <NativeStack.Screen name="Splash2" component={Splash2} /> */}
         <NativeStack.Screen name="Splash3" component={Splash3} />
