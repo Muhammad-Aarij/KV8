@@ -35,11 +35,12 @@ import graphBlack from "../assets/graphBlack.png";
 import dollar from "../assets/dollar.png";
 import leftBlue from "../assets/leftBlue.png";
 import rightBlue from "../assets/rightBlue.png";
+import schoolLogo from "../assets/schoolLogo.png";
 
 
 export {
     tick, spinner, deleteRed, Logoutblack, RightArrow, Profile,
     Notification, InfoSquare, Logout, Headphone, DownArrow, UpArrow, Alert, arrow, Send, User, Search,
     Scholar, Calendarimg, logo, adminIcon, teacherIcon, parentIcon, studentIcon, bg, dots, Homegray, HomeBlack, User1, UserBlack
-    , Assignment, AssignmentBlack, graphBlack, graph, dollar, rightBlue, leftBlue
+    , Assignment, AssignmentBlack, graphBlack, graph, dollar, rightBlue, leftBlue, schoolLogo
 };

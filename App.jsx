@@ -20,6 +20,7 @@ import ChatScreen from "./src/screens/ChatScreen/index";
 import GradeGroup from './src/screens/Grade/index';
 import EditProfileScreen from "./src/screens/EditProfile/Index";
 import BottomTabs from "./src/navigation/BottomTab";
+import StudentProfile from "./src/screens/Profile/StudentProfile";
 
 const NativeStack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -47,6 +48,7 @@ export default function App() {
         <NativeStack.Screen name="ExamSchedule" component={ExamSchedule} />
         <NativeStack.Screen name="GradeGroup" component={GradeGroup} />
         <NativeStack.Screen name="EditProfile" component={EditProfileScreen} />
+        <NativeStack.Screen name="StudentProfile" component={StudentProfile} />
         <NativeStack.Screen name="Main" component={BottomTabs} />
       </NativeStack.Navigator>
     </NavigationContainer>

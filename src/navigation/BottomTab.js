@@ -5,7 +5,7 @@ import { AssignmentBlack, UserBlack, User1, Assignment, Homegray, HomeBlack, gra
 
 import Home from '../screens/Home/index';
 import Assignments from '../screens/Assignments/Index';
-import Profile from '../screens/My Profile/index';
+import Profile from '../screens/Profile/index';
 import FinanceDashboard from '../screens/FinanceDashboard';
 
 const Tab = createBottomTabNavigator();
