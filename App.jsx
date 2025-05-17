@@ -21,6 +21,14 @@ import GradeGroup from './src/screens/Grade/index';
 import EditProfileScreen from "./src/screens/EditProfile/Index";
 import BottomTabs from "./src/navigation/BottomTab";
 import StudentProfile from "./src/screens/Profile/StudentProfile";
+import InstituteProfile from "./src/screens/Profile/InstituteProfile";
+import AddAssignment from "./src/screens/Add New/AddAssignment";
+import AddNotice from "./src/screens/Add New/AddNotice";
+import AddStudent from "./src/screens/Add New/AddStudent";
+import AddTeacher from "./src/screens/Add New/AddTeacher";
+import AddEvent from "./src/screens/Add New/AddEvent";
+import AddNews from "./src/screens/Add New/AddNews";
+import TotalTeacherList from "./src/screens/Total List/TotalTeacherList";
 
 const NativeStack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -49,6 +57,14 @@ export default function App() {
         <NativeStack.Screen name="GradeGroup" component={GradeGroup} />
         <NativeStack.Screen name="EditProfile" component={EditProfileScreen} />
         <NativeStack.Screen name="StudentProfile" component={StudentProfile} />
+        <NativeStack.Screen name="InstituteProfile" component={InstituteProfile} />
+        <NativeStack.Screen name="AddAssignment" component={AddAssignment} />
+        <NativeStack.Screen name="AddNotice" component={AddNotice} />
+        <NativeStack.Screen name="AddStudent" component={AddStudent} />
+        <NativeStack.Screen name="AddTeacher" component={AddTeacher} />
+        <NativeStack.Screen name="AddEvent" component={AddEvent} />
+        <NativeStack.Screen name="AddNews" component={AddNews} />
+        <NativeStack.Screen name="TeacherList" component={TotalTeacherList} />
         <NativeStack.Screen name="Main" component={BottomTabs} />
       </NativeStack.Navigator>
     </NavigationContainer>

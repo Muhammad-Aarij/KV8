@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, ScrollView, StyleSheet, SafeAreaView, Image } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, StyleSheet, SafeAreaView, Image, Pressable } from 'react-native';
 import { Calendarimg } from '../../assets/images';
 import DateSlider from '../../components/DateSlider';
-
+import { useNavigation } from '@react-navigation/native';
 
 // Dummy event data (3 timeline items)
 const events = [
@@ -14,8 +14,8 @@ const events = [
   { id: 3, title: "Science Lab", time: "12:00 PM - 1:30 PM", date: "16 Feb" },
 ];
 
-export default function Calendar() {
-
+export default function Calendar({ }) {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
       {/* Month Header */}
@@ -26,6 +26,9 @@ export default function Calendar() {
 
       {/* Date Navigation */}
       <DateSlider />
+      <Pressable onPress={() => { navigation.navigate("AddEvent") }} style={{ width: 50, height: 50, backgroundColor: "#838383", borderRadius: 50, justifyContent: "center", alignItems: "center", position: "absolute", bottom: 20, right: 15, zIndex: 100 }}>
+        <Text style={{ fontSize: 35, lineHeight: 40, fontFamily: "Urbanist-Bold", color: "white", margin: 0, padding: 0 }}>+</Text>
+      </Pressable>
 
       {/* Timeline and Events (3 Items) */}
       <ScrollView contentContainerStyle={styles.timelineContainer}>
@@ -88,6 +91,6 @@ const styles = StyleSheet.create({
     borderColor: "#DBDBDB",
     marginTop: 20,
   },
-  eventTitle: { fontSize: 14, fontFamily: "Urbanist-SemiBold", marginBottom: 5, width: "70%" },
+  eventTitle: { fontSize: 13, fontFamily: "Urbanist-SemiBold", marginBottom: 5, width: "70%" },
   eventTime: { fontSize: 12, fontFamily: "Urbanist-Regular", color: "#000000" },
 });

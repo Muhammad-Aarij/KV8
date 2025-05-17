@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Image, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { schoolLogo } from '../../assets/images';
+import Header from '../../components/Header';
 
 const InstituteProfile = () => {
     const [editable, setEditable] = useState(false);
@@ -18,33 +19,35 @@ const InstituteProfile = () => {
     };
 
     return (
-        <ScrollView contentContainerStyle={styles.container}>
+        <>
+        <Header title="Institute Profile" />
+            <ScrollView contentContainerStyle={styles.container}>
+                {/* Logo */}
+                <View style={styles.logoContainer}>
+                    <Image source={schoolLogo} style={styles.logo} />
+                </View>
 
-            {/* Logo */}
-            <View style={styles.logoContainer}>
-                <Image source={schoolLogo} style={styles.logo} />
-            </View>
+                {/* Input Fields */}
+                <View style={styles.formContainer}>
+                    {Object.entries(instituteData).map(([key, value], i) => (
+                        <View key={i} style={styles.inputGroup}>
+                            <Text style={styles.label}>{key.replace(/([A-Z])/g, ' $1')}</Text>
+                            <TextInput
+                                style={[styles.inputField, editable && styles.inputActive]}
+                                value={value}
+                                editable={editable}
+                                onChangeText={(text) => setInstituteData({ ...instituteData, [key]: text })}
+                            />
+                        </View>
+                    ))}
+                </View>
 
-            {/* Input Fields */}
-            <View style={styles.formContainer}>
-                {Object.entries(instituteData).map(([key, value], i) => (
-                    <View key={i} style={styles.inputGroup}>
-                        <Text style={styles.label}>{key.replace(/([A-Z])/g, ' $1')}</Text>
-                        <TextInput
-                            style={[styles.inputField, editable && styles.inputActive]}
-                            value={value}
-                            editable={editable}
-                            onChangeText={(text) => setInstituteData({ ...instituteData, [key]: text })}
-                        />
-                    </View>
-                ))}
-            </View>
-
-            {/* Edit Button */}
-            <TouchableOpacity style={[styles.editBtn, editable && styles.saveBtn]} onPress={handleEdit}>
-                <Text style={styles.editText}>{editable ? 'Save' : 'Edit'}</Text>
-            </TouchableOpacity>
-        </ScrollView>
+                {/* Edit Button */}
+                <TouchableOpacity style={[styles.editBtn, editable && styles.saveBtn]} onPress={handleEdit}>
+                    <Text style={styles.editText}>{editable ? 'Save' : 'Edit'}</Text>
+                </TouchableOpacity>
+            </ScrollView>
+        </>
     );
 };
 
@@ -52,16 +55,10 @@ export default InstituteProfile;
 
 const styles = StyleSheet.create({
     container: {
-        // flex: 1,
+        flex: 1,
         padding: 20,
         backgroundColor: '#FFFFFF',
-        alignItems: 'center',
-    },
-    header: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        marginBottom: 20,
-        color: "#2E3A59",
+        // alignItems: 'center',
     },
     logoContainer: {
         backgroundColor: '#FFFFFF',

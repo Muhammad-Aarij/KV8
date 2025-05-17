@@ -56,12 +56,12 @@ const styles = StyleSheet.create({
     dateRow: { flexDirection: 'row', gap: 12, justifyContent: 'center', alignItems: "center", marginBottom: 20 },
     dateBox: { alignItems: 'center', borderRadius: 10, backgroundColor: '#F9F9F9', width: "17%", overflow: "hidden", elevation: 1 },
     selectedDateBox: { backgroundColor: '#ffffff', borderRadius: 15, width: "22%", elevation: 3 },
-    tag: { width: "100%", height: 20, backgroundColor: '#5F33E142' },
-    selectedTag: { width: "100%", height: 30, backgroundColor: '#5F33E1' },
+    tag: { width: "100%", height: 15, backgroundColor: '#5F33E142' },
+    selectedTag: { width: "100%", height: 24, backgroundColor: '#5F33E1' },
     dateNumber: { fontSize: 20, fontFamily: "Urbanist-SemiBold", marginTop: 7 },
-    dateDay: { fontSize: 14, fontFamily: "Urbanist-Medium", marginBottom: 10 },
+    dateDay: { fontSize: 13, fontFamily: "Urbanist-Medium", marginBottom: 10 },
     selectedDateNumber: { color: '#000000', fontSize: 25, fontFamily: "Urbanist-Bold", marginTop: 10 },
-    selectedDateDay: { color: '#000000', fontSize: 18, fontFamily: "Urbanist-Medium", marginBottom: 13 },
+    selectedDateDay: { color: '#000000', fontSize: 16, fontFamily: "Urbanist-Medium", marginBottom: 13 },
 
     // timelineContainer: { paddingBottom: 40 },
 })

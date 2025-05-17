@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, ScrollView, TextInput, StyleSheet, TouchableOpacity, FlatList, Image } from "react-native";
+import { View, Text, ScrollView, TextInput, StyleSheet, TouchableOpacity, FlatList, Image, Pressable } from "react-native";
 
 import Header2 from "../../components/Header2";
 import Community from "./Community";
@@ -7,17 +7,20 @@ import Messaging from "./Messaging";
 import Classroom from "./Classroom";
 import Grade from "./Grade";
 import Calendar from "./Calender";
-
+import { useNavigation } from "@react-navigation/native";
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState("Community");
   const tabs = ["Community", "Classroom", "Grade Group", "Calendar", "Messaging"];
-
+  const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
 
       <Header2 />
+     {activeTab!="Calendar"&& <Pressable onPress={() => { navigation.navigate("AddNews") }} style={{ width: 50, height: 50, backgroundColor: "#838383", borderRadius: 50, justifyContent: "center", alignItems: "center", position: "absolute", bottom: 20, right: 15, zIndex: 100 }}>
+        <Text style={{ fontSize: 35, lineHeight: 40, fontFamily: "Urbanist-Bold", color: "white", margin: 0, padding: 0 }}>+</Text>
+      </Pressable>}
 
       <View style={{
         marginBottom: 15,
@@ -41,7 +44,7 @@ const Index = () => {
       {activeTab == "Classroom" && <Classroom />}
       {activeTab == "Calendar" && <Calendar />}
       {activeTab == "Grade Group" && <Grade />}
-      
+
     </View>
   );
 };

@@ -36,11 +36,24 @@ import dollar from "../assets/dollar.png";
 import leftBlue from "../assets/leftBlue.png";
 import rightBlue from "../assets/rightBlue.png";
 import schoolLogo from "../assets/schoolLogo.png";
+import institute from "../assets/institute.png";
+import classWhite from "../assets/classWhite.png";
+import classGreen from "../assets/classGreen.png";
+import studentWhite from "../assets/studentWhite.png";
+import studentBlue from "../assets/studentBlue.png";
+import teacherWhite from "../assets/teacherWhite.png";
+import teacherBlack from "../assets/teacherBlack.png";
+import notice from "../assets/notice.png";
+import actionBlack from "../assets/action.png";
+import action from "../assets/actionGray.png";
+import gallery from "../assets/gallery.png";
+import pin from "../assets/pin.png";
 
 
 export {
     tick, spinner, deleteRed, Logoutblack, RightArrow, Profile,
     Notification, InfoSquare, Logout, Headphone, DownArrow, UpArrow, Alert, arrow, Send, User, Search,
     Scholar, Calendarimg, logo, adminIcon, teacherIcon, parentIcon, studentIcon, bg, dots, Homegray, HomeBlack, User1, UserBlack
-    , Assignment, AssignmentBlack, graphBlack, graph, dollar, rightBlue, leftBlue, schoolLogo
+    , Assignment, AssignmentBlack, graphBlack, graph, dollar, rightBlue, leftBlue, schoolLogo, institute, teacherBlack,
+    classWhite, classGreen, studentWhite, studentBlue, teacherWhite, notice, actionBlack, action, gallery,pin
 };

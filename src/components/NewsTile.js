@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     },
     postUser: {
         fontFamily: "Urbanist-Bold",
-        fontSize: 14,
+        fontSize: 13,
     },
     postMeta: {
         fontFamily: "Urbanist-Medium",
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     },
     postTitle: {
         fontFamily: "Urbanist-Bold",
-        fontSize: 15,
+        fontSize: 13,
     },
     postBody: {
         fontFamily: "Urbanist-Medium",

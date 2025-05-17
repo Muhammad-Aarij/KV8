@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     },
     postTitle: {
         fontFamily: "Urbanist-Bold",
-        fontSize: 15,
+        fontSize: 13,
     },
     postBody: {
         fontFamily: "Urbanist-Medium",
