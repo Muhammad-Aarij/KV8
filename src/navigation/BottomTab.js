@@ -1,8 +1,8 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { View, Text, Image } from 'react-native';
-import { AssignmentBlack, UserBlack, User1, Assignment, Homegray, HomeBlack, graph, graphBlack, actionBlack, action } from '../assets/images';
-
+import { AssignmentBlack, UserBlack, User1, Assignment, Homegray, HomeBlack, graph, graphBlack, actionBlack, action, feeBlack, fee } from '../assets/images';
+import FeeStructureScreen from '../screens/My Invoices/feeStructureScreen';
 import Home from '../screens/Home/index';
 import Assignments from '../screens/Assignments/Index';
 import Profile from '../screens/Profile/index';
@@ -22,6 +22,7 @@ function BottomTabs() {
 
           if (route.name === 'Home') iconName = focused ? HomeBlack : Homegray;
           else if (route.name === 'Assignments') iconName = focused ? AssignmentBlack : Assignment;
+          else if (route.name === 'FeeStructure') iconName = focused ? feeBlack : fee;
           else if (route.name === 'Profile') iconName = focused ? UserBlack : User1;
           else if (route.name === 'Finance') iconName = focused ? graphBlack : graph;
           else if (route.name === 'Action') iconName = focused ? actionBlack : action;
@@ -51,7 +52,8 @@ function BottomTabs() {
 
       <Tab.Screen name="Home" component={Home} />
       {/* <Tab.Screen name="Assignments" component={Assignments} /> */}
-      <Tab.Screen name="Action" component={AddAction} />
+      {/* <Tab.Screen name="Action" component={AddAction} /> */}
+      <Tab.Screen name="FeeStructure" component={FeeStructureScreen} />
       <Tab.Screen name="Finance" component={FinanceDashboard} />
       <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>

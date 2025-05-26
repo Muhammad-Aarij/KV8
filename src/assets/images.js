@@ -47,13 +47,22 @@ import notice from "../assets/notice.png";
 import actionBlack from "../assets/action.png";
 import action from "../assets/actionGray.png";
 import gallery from "../assets/gallery.png";
+import add from "../assets/Add.png";
 import pin from "../assets/pin.png";
+import hands from "../assets/hands.png";
+import visa from "../assets/visa.png";
+import master from "../assets/master.png";
+import card from "../assets/card.png";
+import feeBlack from "../assets/feeBlack.png";
+import fee from "../assets/fee.png";
+import logoBlack from "../assets/logoBlack.png";
 
 
 export {
     tick, spinner, deleteRed, Logoutblack, RightArrow, Profile,
     Notification, InfoSquare, Logout, Headphone, DownArrow, UpArrow, Alert, arrow, Send, User, Search,
-    Scholar, Calendarimg, logo, adminIcon, teacherIcon, parentIcon, studentIcon, bg, dots, Homegray, HomeBlack, User1, UserBlack
-    , Assignment, AssignmentBlack, graphBlack, graph, dollar, rightBlue, leftBlue, schoolLogo, institute, teacherBlack,
-    classWhite, classGreen, studentWhite, studentBlue, teacherWhite, notice, actionBlack, action, gallery,pin
+    Scholar, Calendarimg, logo, adminIcon, teacherIcon, parentIcon, studentIcon, bg, dots, Homegray, HomeBlack, User1, UserBlack,
+    Assignment, AssignmentBlack, graphBlack, graph, dollar, rightBlue, leftBlue, schoolLogo, institute, teacherBlack,
+    classWhite, classGreen, studentWhite, studentBlue, teacherWhite, notice, actionBlack, action, gallery, pin, add, hands, visa, master,
+    card, feeBlack, logoBlack, fee
 };

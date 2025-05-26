@@ -2,9 +2,6 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-
-import Splash1 from "./src/screens/splash1/index";
-import Splash2 from "./src/screens/splash2/index";
 import Splash3 from "./src/screens/splash3/index";
 import Splash4 from "./src/screens/splash4";
 import RoleSelectionScreen from "./src/screens/roleSelectionScreen/RoleSelectionScreen";
@@ -31,7 +28,6 @@ import AddNews from "./src/screens/Add New/AddNews";
 import TotalTeacherList from "./src/screens/Total List/TotalTeacherList";
 
 const NativeStack = createNativeStackNavigator();
-const Tab = createBottomTabNavigator();
 
 
 
@@ -40,8 +36,6 @@ export default function App() {
   return (
     <NavigationContainer  >
       <NativeStack.Navigator initialRouteName="Main" screenOptions={{ headerShown: false }}>
-        {/* <NativeStack.Screen name="Splash1" component={Splash1} /> */}
-        {/* <NativeStack.Screen name="Splash2" component={Splash2} /> */}
         <NativeStack.Screen name="Splash3" component={Splash3} />
         <NativeStack.Screen name="ChatScreen" component={ChatScreen} />
         <NativeStack.Screen name="Splash4" component={Splash4} />

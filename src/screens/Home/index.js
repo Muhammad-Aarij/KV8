@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, ScrollView, TextInput, StyleSheet, TouchableOpacity, FlatList, Image, Pressable } from "react-native";
-
+import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Image, Pressable } from "react-native";
 import Header2 from "../../components/Header2";
 import Community from "./Community";
 import Messaging from "./Messaging";
@@ -8,6 +7,7 @@ import Classroom from "./Classroom";
 import Grade from "./Grade";
 import Calendar from "./Calender";
 import { useNavigation } from "@react-navigation/native";
+import { add } from "../../assets/images";
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState("Community");
@@ -18,9 +18,11 @@ const Index = () => {
     <View style={styles.container}>
 
       <Header2 />
-     {activeTab!="Calendar"&& <Pressable onPress={() => { navigation.navigate("AddNews") }} style={{ width: 50, height: 50, backgroundColor: "#838383", borderRadius: 50, justifyContent: "center", alignItems: "center", position: "absolute", bottom: 20, right: 15, zIndex: 100 }}>
-        <Text style={{ fontSize: 35, lineHeight: 40, fontFamily: "Urbanist-Bold", color: "white", margin: 0, padding: 0 }}>+</Text>
-      </Pressable>}
+      {activeTab != "Calendar" &&
+        <Pressable onPress={() => { navigation.navigate("AddNews") }} style={{ justifyContent: "center", alignItems: "center", position: "absolute", bottom: 20, right: 15, zIndex: 100, }}>
+          <Image source={add} style={{ height: 45, width: 55, resizeMode: "contain", opacity: 0.65, }} />
+        </Pressable>
+      }
 
       <View style={{
         marginBottom: 15,
