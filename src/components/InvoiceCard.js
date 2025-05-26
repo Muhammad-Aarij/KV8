@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { logoBlack } from '../assets/images';
+import { useNavigation } from '@react-navigation/native';
 
 const InvoiceCard = ({
   invoiceNo = '0000',
@@ -11,59 +12,67 @@ const InvoiceCard = ({
   status = 'Pending',
   totalFee = '$0',
   arrears = 'None',
+  paymentNumber = '4242 4242 4242 4242',
+  payNow = true,
 }) => {
+  const navigation = useNavigation();
   return (
-    <View style={styles.card}>
-      <Image source={logoBlack} style={styles.logo} />
-      <View style={styles.header}>
-        <Text style={styles.subheading}>Fee Invoice</Text>
-        <Text style={styles.label}>Invoice No: {invoiceNo}</Text>
-      </View>
-
-      <View style={styles.separator} />
-
-      <View style={styles.details}>
-        <Text style={styles.label}>Child Name</Text>
-        <Text style={styles.value}>{childName}</Text>
-      </View>
-
-      <View style={styles.details}>
-        <Text style={styles.label}>Parent / Guardian Name</Text>
-        <Text style={styles.value}>{guardianName}</Text>
-      </View>
-
-      <View style={styles.details}>
-        <Text style={styles.label}>Child Class</Text>
-        <Text style={styles.value}>{childClass}</Text>
-      </View>
-
-      <View style={styles.details}>
-        <Text style={styles.label}>Fee Month</Text>
-        <Text style={styles.value}>{feeMonth}</Text>
-      </View>
-
-      <View style={styles.details}>
-        <Text style={styles.label}>Status</Text>
-        <Text style={[styles.value, { color: status === 'Due' ? 'red' : 'green' }]}>{status}</Text>
-      </View>
-
-      <View style={styles.details}>
-        <Text style={styles.label}>Total Fee</Text>
-        <Text style={styles.value}>{totalFee}</Text>
-      </View>
-
-      <View style={styles.details}>
-        <Text style={styles.label}>Arrears</Text>
-        <Text style={styles.value}>{arrears}</Text>
-      </View>
-
-      <View style={styles.separator} />
-
-      <Text style={styles.subheading}>Payment Options</Text>
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Pay Now</Text>
-      </TouchableOpacity>
+  <View style={styles.card}>
+    <Image source={logoBlack} style={styles.logo} />
+    <View style={styles.header}>
+      <Text style={styles.subheading}>Fee Invoice</Text>
+      <Text style={styles.label}>Invoice No: {invoiceNo}</Text>
     </View>
+
+    <View style={styles.separator} />
+
+    <View style={styles.details}>
+      <Text style={styles.label}>Child Name</Text>
+      <Text style={styles.value}>{childName}</Text>
+    </View>
+
+    <View style={styles.details}>
+      <Text style={styles.label}>Parent / Guardian Name</Text>
+      <Text style={styles.value}>{guardianName}</Text>
+    </View>
+
+    <View style={styles.details}>
+      <Text style={styles.label}>Child Class</Text>
+      <Text style={styles.value}>{childClass}</Text>
+    </View>
+
+    <View style={styles.details}>
+      <Text style={styles.label}>Fee Month</Text>
+      <Text style={styles.value}>{feeMonth}</Text>
+    </View>
+
+    <View style={styles.details}>
+      <Text style={styles.label}>Status</Text>
+      <Text style={[styles.value, { color: status === 'Due' ? 'red' : 'green' }]}>{status}</Text>
+    </View>
+
+    <View style={styles.details}>
+      <Text style={styles.label}>Total Fee</Text>
+      <Text style={styles.value}>{totalFee}</Text>
+    </View>
+
+    <View style={styles.details}>
+      <Text style={styles.label}>Arrears</Text>
+      <Text style={styles.value}>{arrears}</Text>
+    </View>
+
+    <View style={styles.separator} />
+
+    <Text style={{ ...styles.subheading, marginBottom: 12, }}>Payment Options</Text>
+    <View style={styles.details}>
+      <Text style={styles.label}>Bank Payment</Text>
+      <Text style={styles.value}>{paymentNumber}</Text>
+    </View>
+    {payNow &&
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AddCard')}>
+        <Text style={styles.buttonText}>Pay Now</Text>
+      </TouchableOpacity>}
+  </View>
   );
 };
 

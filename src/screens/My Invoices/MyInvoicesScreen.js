@@ -1,32 +1,58 @@
-// MyInvoicesScreen.js
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, FlatList } from 'react-native';
+import InvoiceCard from '../../components/InvoiceCard';
+import Header from '../../components/Header';
+
+const invoicesData = [
+  {
+    id: '1',
+    invoiceNo: '2023-20',
+    childName: 'Andrew Ainsley',
+    guardianName: 'Michael Ainsley',
+    childClass: '7th B',
+    feeMonth: 'March',
+    status: 'Due',
+    totalFee: '$1000',
+    arrears: 'N/A'
+  },
+  {
+    id: '2',
+    invoiceNo: '2023-21',
+    childName: 'Emily Brown',
+    guardianName: 'John Brown',
+    childClass: '8th A',
+    feeMonth: 'April',
+    status: 'Paid',
+    totalFee: '$1200',
+    arrears: 'None'
+  },
+];
 
 const MyInvoicesScreen = () => {
   return (
-    <ScrollView style={styles.container}>
-      {[1, 2].map((i) => (
-        <View key={i} style={styles.card}>
-          <Text style={styles.invoiceNumber}>Invoice No: 2023-20</Text>
-          <Text style={styles.label}>Child Name: <Text style={styles.value}>Andrew Ainsley</Text></Text>
-          <Text style={styles.label}>Parent Name: <Text style={styles.value}>Michael Ainsley</Text></Text>
-          <Text style={styles.label}>Class: <Text style={styles.value}>7th B</Text></Text>
-          <Text style={styles.label}>Month: <Text style={styles.value}>March</Text></Text>
-          <Text style={styles.label}>Status: <Text style={[styles.value, { color: 'green' }]}>Paid</Text></Text>
-          <Text style={styles.label}>Total Fee: <Text style={styles.value}>$1000</Text></Text>
-          <Text style={styles.label}>Arrear: <Text style={styles.value}>N/A</Text></Text>
-        </View>
-      ))}
-    </ScrollView>
+    <>
+      <Header title="My Invoices" navigateTo={"Main"}/>
+      <View style={styles.container}>
+        <FlatList
+          data={invoicesData}
+          keyExtractor={(item) => item.id}
+          showsVerticalScrollIndicator={false}
+          renderItem={({ item }) => <InvoiceCard {...item} payNow={false} />}
+        />
+      </View>
+    </>
   );
 };
 
 const styles = StyleSheet.create({
-  container: { padding: 16 },
-  card: { backgroundColor: '#f2f2f2', padding: 16, borderRadius: 12, marginBottom: 16 },
-  invoiceNumber: { alignSelf: 'flex-end', fontSize: 12, marginBottom: 10 },
-  label: { fontSize: 13 },
-  value: { fontWeight: '500' },
+  container: { padding: 16, flex: 1, backgroundColor: '#fff' },
+  title: {
+    fontFamily: "Urbanist-Bold",
+    fontSize: 20,
+    marginVertical: 15,
+    textAlign: "center",
+    color: "#212121",
+  },
 });
 
 export default MyInvoicesScreen;

@@ -26,6 +26,9 @@ import AddTeacher from "./src/screens/Add New/AddTeacher";
 import AddEvent from "./src/screens/Add New/AddEvent";
 import AddNews from "./src/screens/Add New/AddNews";
 import TotalTeacherList from "./src/screens/Total List/TotalTeacherList";
+import PaymentDetailsScreen from "./src/screens/My Invoices/PaymentDetailsScreen";
+import MyInvoicesScreen from "./src/screens/My Invoices/MyInvoicesScreen";
+import AddCardScreen from "./src/screens/My Invoices/AddCardScreen";
 
 const NativeStack = createNativeStackNavigator();
 
@@ -58,6 +61,9 @@ export default function App() {
         <NativeStack.Screen name="AddTeacher" component={AddTeacher} />
         <NativeStack.Screen name="AddEvent" component={AddEvent} />
         <NativeStack.Screen name="AddNews" component={AddNews} />
+        <NativeStack.Screen name="PaymentDetail" component={PaymentDetailsScreen} />
+        <NativeStack.Screen name="MyInvoices" component={MyInvoicesScreen} />
+        <NativeStack.Screen name="AddCard" component={AddCardScreen} />
         <NativeStack.Screen name="TeacherList" component={TotalTeacherList} />
         <NativeStack.Screen name="Main" component={BottomTabs} />
       </NativeStack.Navigator>
